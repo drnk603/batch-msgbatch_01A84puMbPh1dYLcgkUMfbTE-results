@@ -150,12 +150,12 @@
 
     var links = document.querySelectorAll('.c-nav__link, .navbar-nav .nav-link');
     var path = global.location.pathname;
-    var normalizedPath = path.replace(//index.html$/, '/') || '/';
+    var normalizedPath = path.replace(/\/index\.html$/, '/') || '/';
 
     for (var i = 0; i < links.length; i++) {
       var link = links[i];
       var linkHref = link.getAttribute('href') || '';
-      var normalizedHref = linkHref.replace(//index.html$/, '/') || '/';
+      var normalizedHref = linkHref.replace(/\/index\.html$/, '/') || '/';
 
       link.removeAttribute('aria-current');
       link.classList.remove('is-active');
@@ -513,7 +513,7 @@
   }
 
   function validateEmail(value) {
-    return /^[^s@]+@[^s@]+.[^s@]+$/.test(value.trim());
+    return /^[^s@]+@[^s@]+\.[^s@]+$/.test(value.trim());
   }
 
   function validatePhone(value) {
